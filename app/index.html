@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electron & Mongodb CRUD</title>
+  <link rel="stylesheet" href="ui/app.css">
+</head>
+
+<body>
+  <h1>Electron & Mongo App</h1>
+
+  <form id="taskForm" class="card">
+    <input type="text" id="taskName" placeholder="Task's Name" autofocus>
+    <textarea id="taskDescription" rows="3" placeholder="Task's Description" autofocus></textarea>
+    <button type="submit" class="btn btn-secondary">
+      Save
+    </button>
+  </form>
+
+  <!-- Task List -->
+  <ul id="taskList"></ul>
+
+  <script src="ui/app.js"></script>
+</body>
+
+</html>

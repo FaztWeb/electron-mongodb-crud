@@ -1,0 +1,16 @@
+{
+  "name": "electron-mongodb-crud",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app/index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^8.2.0",
+    "mongoose": "^5.9.7"
+  }
+}
