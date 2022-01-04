@@ -19,15 +19,14 @@ function deleteTask(id) {
 function editTask(id) {
   updateStatus = true;
   idTaskToUpdate = id;
-  const task = tasks.find(task => task._id === id);
+  const task = tasks.find((task) => task._id === id);
   taskName.value = task.name;
   taskDescription.value = task.description;
 }
 
 function renderTasks(tasks) {
   taskList.innerHTML = "";
-  console.log(tasks);
-  tasks.map(t => {
+  tasks.map((t) => {
     taskList.innerHTML += `
           <li class="card">
             <h4>
@@ -54,15 +53,13 @@ let tasks = [];
 
 ipcRenderer.send("get-tasks");
 
-taskForm.addEventListener("submit", async e => {
+taskForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const task = {
     name: taskName.value,
-    description: taskDescription.value
+    description: taskDescription.value,
   };
-
-  console.log(updateStatus);
 
   if (!updateStatus) {
     ipcRenderer.send("new-task", task);
@@ -91,7 +88,7 @@ ipcRenderer.on("get-tasks", (e, args) => {
 
 ipcRenderer.on("delete-task-success", (e, args) => {
   const deletedTask = JSON.parse(args);
-  const newTasks = tasks.filter(t => {
+  const newTasks = tasks.filter((t) => {
     return t._id !== deletedTask._id;
   });
   tasks = newTasks;
@@ -104,7 +101,7 @@ ipcRenderer.on("update-task-success", (e, args) => {
   tasks = tasks.map((t, i) => {
     if (t._id === updatedTask._id) {
       t.name = updatedTask.name;
-      t.description = updatedTask.description
+      t.description = updatedTask.description;
     }
     return t;
   });

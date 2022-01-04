@@ -7,19 +7,21 @@
 body {
   color: #dfe6e9;
   background: #2f3640;
-  padding: 20px;
+  padding: 10px;
 }
 
 input, textarea {
   display: block;
   width: 100%;
   padding: 10px;
-  margin-bottom: 4px;
+  margin-bottom: 1rem;
+  border: 0;
+  outline: 0;
 }
 
 .card {
-  background: #222f3e;
-  border: 1px solid #dfe6e9;
+  background: #212121;
+  border: 1px solid #333;
   border-radius: 4px;
   margin: 4px;
   list-style: none;
@@ -30,8 +32,8 @@ input, textarea {
   color: #fff !important;
   text-transform: uppercase;
   text-decoration: none;
-  padding: 15px;
-  border-radius: 5px;
+  padding: .7rem 1rem;
+  border-radius: 3px;
   display: inline-block;
   border: none;
   transition: all 0.4s ease 0s;

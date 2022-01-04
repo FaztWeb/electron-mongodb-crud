@@ -6,8 +6,10 @@ function createWindow() {
     width: 500,
     height: 700,
     webPreferences: {
-      nodeIntegration: true
-    }
+      nodeIntegration: true,
+      contextIsolation: false,
+    },
+    autoHideMenuBar: true,
   });
 
   win.loadFile("app/index.html");
@@ -16,7 +18,6 @@ function createWindow() {
 ipcMain.on("new-task", async (e, arg) => {
   const newTask = new Task(arg);
   const taskSaved = await newTask.save();
-  console.log(taskSaved);
   e.reply("new-task-created", JSON.stringify(taskSaved));
 });
 

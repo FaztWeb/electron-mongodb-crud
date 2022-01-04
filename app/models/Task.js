@@ -1,14 +1,14 @@
-const { model , Schema} = require('mongoose')
+const { model, Schema } = require("mongoose");
 
 const newTaskSchema = new Schema({
   name: {
     type: String,
-    required: true
+    required: true,
   },
   description: {
     type: String,
-    required: true
+    required: true,
   },
-})
+});
 
-module.exports = model('Task', newTaskSchema);
+module.exports = model("Task", newTaskSchema);

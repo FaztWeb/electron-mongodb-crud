@@ -1,7 +1,12 @@
-const { createWindow } = require('./main')
-const { app } = require('electron')
+const { createWindow } = require("./main");
+const { app } = require("electron");
 
-require('./database');
+require("./database");
 
 app.whenReady().then(createWindow);
-app.allowRendererProcessReuse = false 
+
+try {
+  require('electron-reloader')(module)
+} catch (_) {}
+
+app.allowRendererProcessReuse = false;

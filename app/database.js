@@ -1,8 +1,7 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
+const { MONGODB_URI } = require("./config");
 
-mongoose.connect('mongodb://localhost/electrondb', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
-  .then(db => console.log('DB is connected'))
-  .catch(err => console.log(err));
+mongoose
+  .connect(MONGODB_URI)
+  .then((db) => console.log("DB is connected"))
+  .catch((err) => console.log(err));
